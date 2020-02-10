@@ -1,0 +1,13 @@
+<script>
+$(document).ready(function() {
+    let js = $('#task').text().slice(1, -1)
+    js = js.replace(/    /g, '&nbsp;&nbsp;')
+    js = js.replace(/\n/g, '<br/>')
+    $('#script').append(js)
+
+    hljs.configure({useBR: true});
+    document.querySelectorAll('div code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+})
+</script>

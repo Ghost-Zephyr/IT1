@@ -1,36 +1,47 @@
 {% extends "jinjapartals/base.jinja2" %}
 {% block title %}JavaScript Task 1{% endblock %}
 {% block addhead %}
-<style>
-#answer {
-
-}
-</style>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
 {% endblock addhead %}
 {% block content %}
 <h3>Calculator</h3>
 <input id='n1' type="number"><br/>
 <input id='n2' type="number"><br/>
-<input onclick='calculate()' type="button"><br/>
-<h3 id='answer'></p>
+<select id='op  r' name="operator">
+  <option>+ (addition)</option>
+  <option>- (subtraction)</option>
+  <option>/ (division)</option>
+  <option>* (multiplication)</option>
+  <option>^ (exponent)</option>
+  <option>% (remainder)</option>
+</select><br/>
+<input onclick='calculate()' value='calculate' type="button"><br/>
+<h3 id='answer'>Answer: </h3>
 <script id='task'>
 function calculate() {
     let n1 = $('#n1')[0].valueAsNumber
     let n2 = $('#n2')[0].valueAsNumber
-    $('#answer').text('Answer: '+(n1+n2))
+    let operator = $('select').val().slice(0, 1)
+    if (operator == '+')
+        $('#answer').text('Answer: '+(n1+n2))
+    else if (operator == '-')
+        $('#answer').text('Answer: '+(n1-n2))
+    else if (operator == '/')
+        $('#answer').text('Answer: '+(n1/n2))
+    else if (operator == '*')
+        $('#answer').text('Answer: '+(n1*n2))
+    else if (operator == '^')
+        $('#answer').text('Answer: '+(n1**n2))
+    else if (operator == '%')
+        $('#answer').text('Answer: '+(n1%n2))
 }
 </script>
-<br/>
 <h3>JavaScript</h3>
 <div id='js'>
-    <p id="script"></p>
+    <code class='javascript' id="script"></code>
 </div>
 {% endblock %}
 {% block script %}
-<script>
-$(document).ready(function() {
-    let js = $('#task').text()
-    $('#script').text(js)
-})
-</script>
+{% include "javascript/script.jinja2" %}
 {% endblock %}

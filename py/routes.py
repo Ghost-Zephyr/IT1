@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.add_url_rule('/it1', 'index', jinja.index,
     methods=['GET'])
 
-app.add_url_rule('/it1/js', 'javascirpt', jinja.javascirpt,
+app.add_url_rule('/it1/js', 'jsindex', jinja.jsindex,
     methods=['GET'])
 
-app.add_url_rule('/it1/js/1', 'javascirpt1', jinja.javascirpt1,
+app.add_url_rule('/it1/js/1', 'js1', jinja.js1,
     methods=['GET'])
 

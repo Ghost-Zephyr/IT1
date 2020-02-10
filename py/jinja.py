@@ -3,12 +3,14 @@ from jinja2 import Environment, FileSystemLoader
 j2_env = Environment(loader=FileSystemLoader('.'), trim_blocks=True)
 
 def index():
-    return 'Works!'
+    template = j2_env.get_template('index.jinja2')
+    return template.render()
 
-def javascirpt():
-    return 'Works!'
+def jsindex():
+    template = j2_env.get_template('javascript/index.jinja2')
+    return template.render()
 
-def javascirpt1():
+def js1():
     template = j2_env.get_template('javascript/1.jinja2')
     return template.render()
 

@@ -1,2 +1,3 @@
 # IT1
-Same as PROGMODX, but simpler in person class.
+Same as PROGMODX, but simpler in person class...
+So I made a website hosting some of my work!
