@@ -1,1 +1,1 @@
-from py *
+from py import *
