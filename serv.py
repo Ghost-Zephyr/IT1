@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.config['DEBUG'] = True
 
-from routes import *
+from py.routes import *
 
 if __name__ == "__main__":
     app.run(port=8080)
