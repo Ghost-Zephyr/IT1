@@ -1,7 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
-from os.path import abspath
+from os.path import abspath, dirname
 
-j2_env = Environment(loader=FileSystemLoader(abspath('.')), trim_blocks=True)
+j2_env = Environment(loader=FileSystemLoader(abspath(f'{dirname(abspath(__file__))}/..')), trim_blocks=True)
 
 def index():
     template = j2_env.get_template('index.jinja2')
