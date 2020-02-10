@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} - IT1</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.jpg"/>
+    {# <link rel="stylesheet" href="/static/main.css"> #}
+    <style>
+body {
+    background-color: #333;
+    color: #19d019;
+}
+#content > input {
+    margin: 2vh;
+}
+#js {
+    background-color: #EEE;
+    color: black;
+    width: 30%;
+    margin: 2vh;
+    padding: 2vh;
+}
+#script {
+    margin: 2vh;
+}
+h1 {
+    margin: 2vh;
+}
+h3 {
+    margin: 2vh;
+}
+    </style>
+{% endblock %}
+{% block addhead %}
+{% endblock %}
+</head>
+<body>
+<h1 class="title">IT1 Tasks</h1>
+{% include "jinjapartals/navbar.jinja2" %}
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+{% block script %}
+{% endblock %}
+{% block footer %}
+<footer class="page-footer font-small green pt-5">
+    <div class="footer-copyright text-center py-3">&copy; 2020 <a href="https://GhostZephyr.pythonanywhere.com/" class="disabled">Sivert V. Sæther</a></div>
+</footer>
+{% endblock %}
+</body>
+</html>

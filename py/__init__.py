@@ -1,2 +1,2 @@
-import routes
-
+from .routes import *
+from . import jinja
