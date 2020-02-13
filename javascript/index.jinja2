@@ -3,6 +3,9 @@
 {% block content %}
 <h3>JavaScript Tasks for IT1</h3>
 <p>
-    <a href='/it1/js/1'>Task 1: Calculator</a>
+    {# <a href='/it1/js/1'>Task 1: Calculator</a> #}
+{% for task in tasks %}
+    <a href='/it1/js/{{ task['num'] }}'>Task {{ task['num'] }}: {{ task['name'] }}</a>
+{% endfor %}
 </p>
 {% endblock %}
